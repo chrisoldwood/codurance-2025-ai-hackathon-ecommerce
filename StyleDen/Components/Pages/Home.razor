@@ -1,7 +1,13 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+@inject IProductService ProductService
 
-<h1>Hello, world!</h1>
+<PageTitle>Products</PageTitle>
 
-Welcome to your new app.
+<table id="products-table">
+    <tr><td>Name</td><td>Price</td></tr>
+@{foreach(var product in ProductService.GetAllProducts()) {
+    <tr><td>@product.Name</td><td>@product.Price</td></tr>
+}}
+
+</table>
