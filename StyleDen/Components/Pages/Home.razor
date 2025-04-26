@@ -7,7 +7,7 @@
 <table id="products-table">
     <tr><td>Name</td><td>Price</td></tr>
 @{foreach(var product in ProductService.GetAllProducts()) {
-    <tr><td>@product.Name</td><td>@product.Price</td></tr>
+    <tr id="product-@product.ID"><td>@product.Name</td><td>@product.Price</td></tr>
 }}
 
 </table>
